@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Detalle evento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      Motivo
+      <ion-note item-end>
+        {{evento.motivo}}
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      Lugar
+      <ion-note item-end>
+        {{evento.lugar}}
+      </ion-note>
+    </ion-item>
+
+</ion-list>
+
+<button ion-button block (click)="agregarInvitado()">Agregar Invitado</button>
+
+<ion-card>
+  <ion-card-header>
+    Listado de invitados
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list *ngFor="let invitado of listaInvitados$">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img [src]="invitado.foto">
+        </ion-thumbnail>
+        <h2>{{ invitado.nombre }}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+ 
+</ion-content>
